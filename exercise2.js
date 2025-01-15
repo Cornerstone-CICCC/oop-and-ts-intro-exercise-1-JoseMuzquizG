@@ -6,7 +6,21 @@
 // Add a static method compareAccounts(account1, account2) that compares two BankAccount objects and returns the account with the higher balance.
 
 class BankAccount {
-  // YOUR CODE HERE
+  static compareAccounts(account1, account2) {
+    account1 > account2 ? account1 : account2
+  }
+
+  constructor(accountNumber, balance) {
+    this.accNum = accountNumber
+    this.accBalance = balance
+  }
+
+  deposit(amount) {
+    return `Your new balance is: ${this.accBalance + amount}` 
+  }
+  withdraw(amount) {
+    return this.accBalance > amount ? `Your new balance is ${this.accBalance - amount}` : "There's not enough money in your account"  
+  }
 }
 
 
